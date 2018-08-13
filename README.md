@@ -21,11 +21,12 @@ If you will be processing a large amount of data using MAX UnMix - it is adventa
 
 4. In “Console” enter the following text and hit return: 
 	
-	install.packages("shiny") # load the shiny package into R
-	install.packages("shinyBS")
-	install.packages("fGarch")
-	install.packages("MESS") 
-	shiny::runGitHub("max-unmix", "dan-maxbauer")
+	* install.packages("shiny") # load the shiny package into R
+	* install.packages("shinyBS") 
+	* install.packages("fGarch") 
+	* install.packages("MESS")
+	* shiny::runGitHub("max-unmix", "dan-maxbauer")
+	
 	*note*: if you encounter any errors related to missing packages you can simply run install.packages() and enter the appropriate name of the package as demonstrated above
 
 ############

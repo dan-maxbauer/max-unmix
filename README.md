@@ -26,7 +26,7 @@ If you will be processing a large amount of data using MAX UnMix - it is adventa
 	install.packages("fGarch")
 	install.packages("MESS") 
 	shiny::runGitHub("max-unmix", "dan-maxbauer")
-	# note: if you encounter any errors related to missing packages you can simply run install.packages() and enter the appropriate name of the package as demonstrated above
+	*note*: if you encounter any errors related to missing packages you can simply run install.packages() and enter the appropriate name of the package as demonstrated above
 
 ############
 If you encounter problems in operating MAX UnMix locally or online, please send all questions, comments, and concerns to Dan Maxbauer (maxba001@umn.edu).

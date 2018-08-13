@@ -24,10 +24,9 @@ If you will be processing a large amount of data using MAX UnMix - it is adventa
 	install.packages("shiny") # load the shiny package into R
 	install.packages("shinyBS")
 	install.packages("fGarch")
-	install.packages("MESS")
-	library("shiny") # this need to be entered each time R-studio is re-launched to run program (contains runApp() function below)
-	setwd("enter file path to max-unmix folder") #tells R where to find app
-	runApp("max-unmix") #will launch app in browser or local R-studio window
+	install.packages("MESS") 
+	shiny::runGitHub("max-unmix", "dan-maxbauer")
+	# note: if you encounter any errors related to missing packages you can simply run install.packages() and enter the appropriate name of the package as demonstrated above
 
 ############
 If you encounter problems in operating MAX UnMix locally or online, please send all questions, comments, and concerns to Dan Maxbauer (maxba001@umn.edu).

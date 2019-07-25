@@ -38,7 +38,8 @@ shinyServer(function(input, output) {
       dat()[,(1:2)]
       },digits=c(2,2,7))
   # })
-# #### set up for click/drag to remove or add points ############
+   
+####### set up for click/drag to remove or add points ############
 vals <- reactiveValues(keeprows = rep(TRUE, 1))
 
 #observeEvent(dat(),{vals$keeprows <- rep(TRUE, nrow(dat()))}) ### problem now is that the observer here needs to watch something that doesn't reset very often
@@ -1914,9 +1915,9 @@ if(n.comp == 4){
   TC[3,1] <- C3.op.m.a/mod.a.m
   TC[3,2] <- C3.op.l.a/mod.a.l #l
   TC[3,3] <- C3.op.u.a/mod.a.u #u
-  TC[4,1] <- C3.op.m.a/mod.a.m
-  TC[4,2] <- C3.op.l.a/mod.a.l #l
-  TC[4,3] <- C3.op.u.a/mod.a.u #u
+  TC[4,1] <- C4.op.m.a/mod.a.m
+  TC[4,2] <- C4.op.l.a/mod.a.l #l
+  TC[4,3] <- C4.op.u.a/mod.a.u #u
 }
 if(n.comp == 5){
   C1.op.m = co.1.mean
@@ -1970,12 +1971,12 @@ if(n.comp == 5){
   TC[3,1] <- C3.op.m.a/mod.a.m
   TC[3,2] <- C3.op.l.a/mod.a.l #l
   TC[3,3] <- C3.op.u.a/mod.a.u #u
-  TC[4,1] <- C3.op.m.a/mod.a.m
-  TC[4,2] <- C3.op.l.a/mod.a.l #l
-  TC[4,3] <- C3.op.u.a/mod.a.u #u
-  TC[5,1] <- C3.op.m.a/mod.a.m
-  TC[5,2] <- C3.op.l.a/mod.a.l #l
-  TC[5,3] <- C3.op.u.a/mod.a.u #u
+  TC[4,1] <- C4.op.m.a/mod.a.m
+  TC[4,2] <- C4.op.l.a/mod.a.l #l
+  TC[4,3] <- C4.op.u.a/mod.a.u #u
+  TC[5,1] <- C5.op.m.a/mod.a.m
+  TC[5,2] <- C5.op.l.a/mod.a.l #l
+  TC[5,3] <- C5.op.u.a/mod.a.u #u
 }
 if(n.comp == 6){
   C1.op.m = co.1.mean
@@ -2035,15 +2036,15 @@ if(n.comp == 6){
   TC[3,1] <- C3.op.m.a/mod.a.m
   TC[3,2] <- C3.op.l.a/mod.a.l #l
   TC[3,3] <- C3.op.u.a/mod.a.u #u
-  TC[4,1] <- C3.op.m.a/mod.a.m
-  TC[4,2] <- C3.op.l.a/mod.a.l #l
-  TC[4,3] <- C3.op.u.a/mod.a.u #u
-  TC[5,1] <- C3.op.m.a/mod.a.m
-  TC[5,2] <- C3.op.l.a/mod.a.l #l
-  TC[5,3] <- C3.op.u.a/mod.a.u #u
-  TC[6,1] <- C3.op.m.a/mod.a.m
-  TC[6,2] <- C3.op.l.a/mod.a.l #l
-  TC[6,3] <- C3.op.u.a/mod.a.u #u
+  TC[4,1] <- C4.op.m.a/mod.a.m
+  TC[4,2] <- C4.op.l.a/mod.a.l #l
+  TC[4,3] <- C4.op.u.a/mod.a.u #u
+  TC[5,1] <- C4.op.m.a/mod.a.m
+  TC[5,2] <- C4.op.l.a/mod.a.l #l
+  TC[5,3] <- C4.op.u.a/mod.a.u #u
+  TC[6,1] <- C4.op.m.a/mod.a.m
+  TC[6,2] <- C4.op.l.a/mod.a.l #l
+  TC[6,3] <- C4.op.u.a/mod.a.u #u
 } 
 ################################################## recalculating for extrapolated contributions
 p = fit.p
@@ -2376,9 +2377,9 @@ if(n.comp == 4){
   EC[3,1] <- C3.op.m.a.ec/mod.a.m.ec
   EC[3,2] <- C3.op.l.a.ec/mod.a.l.ec #l
   EC[3,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[4,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[4,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[4,3] <- C3.op.u.a.ec/mod.a.u.ec #u
+  EC[4,1] <- C4.op.m.a.ec/mod.a.m.ec
+  EC[4,2] <- C4.op.l.a.ec/mod.a.l.ec #l
+  EC[4,3] <- C4.op.u.a.ec/mod.a.u.ec #u
 }
 if(n.comp == 5){
   C1.op.m.ec = co.1.mean.ec
@@ -2432,12 +2433,12 @@ if(n.comp == 5){
   EC[3,1] <- C3.op.m.a.ec/mod.a.m.ec
   EC[3,2] <- C3.op.l.a.ec/mod.a.l.ec #l
   EC[3,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[4,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[4,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[4,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[5,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[5,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[5,3] <- C3.op.u.a.ec/mod.a.u.ec #u
+  EC[4,1] <- C4.op.m.a.ec/mod.a.m.ec
+  EC[4,2] <- C4.op.l.a.ec/mod.a.l.ec #l
+  EC[4,3] <- C4.op.u.a.ec/mod.a.u.ec #u
+  EC[5,1] <- C5.op.m.a.ec/mod.a.m.ec
+  EC[5,2] <- C5.op.l.a.ec/mod.a.l.ec #l
+  EC[5,3] <- C5.op.u.a.ec/mod.a.u.ec #u
 }
 if(n.comp == 6){
   C1.op.m.ec = co.1.mean.ec
@@ -2497,15 +2498,15 @@ if(n.comp == 6){
   EC[3,1] <- C3.op.m.a.ec/mod.a.m.ec
   EC[3,2] <- C3.op.l.a.ec/mod.a.l.ec #l
   EC[3,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[4,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[4,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[4,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[5,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[5,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[5,3] <- C3.op.u.a.ec/mod.a.u.ec #u
-  EC[6,1] <- C3.op.m.a.ec/mod.a.m.ec
-  EC[6,2] <- C3.op.l.a.ec/mod.a.l.ec #l
-  EC[6,3] <- C3.op.u.a.ec/mod.a.u.ec #u
+  EC[4,1] <- C4.op.m.a.ec/mod.a.m.ec
+  EC[4,2] <- C4.op.l.a.ec/mod.a.l.ec #l
+  EC[4,3] <- C4.op.u.a.ec/mod.a.u.ec #u
+  EC[5,1] <- C5.op.m.a.ec/mod.a.m.ec
+  EC[5,2] <- C5.op.l.a.ec/mod.a.l.ec #l
+  EC[5,3] <- C5.op.u.a.ec/mod.a.u.ec #u
+  EC[6,1] <- C6.op.m.a.ec/mod.a.m.ec
+  EC[6,2] <- C6.op.l.a.ec/mod.a.l.ec #l
+  EC[6,3] <- C6.op.u.a.ec/mod.a.u.ec #u
 } 
 ###############################################################################
 ##### actual plot ###### 

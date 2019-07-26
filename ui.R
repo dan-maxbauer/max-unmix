@@ -237,8 +237,8 @@ shinyUI(navbarPage("MAX UnMix",
              mainPanel(
                h3("User Videos"),
                p("Below are some brief instructional videos to help get you started with unmixing your magnetic data. Links to previous magnetic unmixing methods and application papers 
-                  are provided in the sidebar. This program is still in its infancy so please report any issues you come across to 
-                 Dan Maxbauer (maxba001@umn.edu). Enjoy the unmixing!"),
+                  are provided in the sidebar. Please report any issues you come across to 
+                 Dan Maxbauer (dmaxbauer@carleton.edu). Enjoy the unmixing!"),
                hr(),
                # uiOutput('pdfviewer'),
                h5("Data Upload tutorial:"),
@@ -254,8 +254,8 @@ shinyUI(navbarPage("MAX UnMix",
                ),
              sidebarPanel(
                h3("Resources:"),
-               a("User Manual - MAX UnMix",href="http://danielmaxbauer.weebly.com/uploads/3/9/8/4/39840459/manual.pdf",targer="_blank"),
-               hr(),
+               # a("User Manual - MAX UnMix",href="http://danielmaxbauer.weebly.com/uploads/3/9/8/4/39840459/manual.pdf",targer="_blank"),
+               # hr(),
                p("Listed below are references to previous studies and methods for unmixing magnetic data."),
                a("Kruiver et al. (2001) IRM-CLG Model Description", href="http://www.sciencedirect.com/science/article/pii/S0012821X01003673",targer="_blank"),
                br(),

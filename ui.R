@@ -270,8 +270,15 @@ shinyUI(navbarPage("MAX UnMix",
                a("Egli (2004) part 3", href="http://www.sciencedirect.com/science/article/pii/S1474706504001184",target="_blank")
              )
              ) #fluidPage    
-             ) 
-
+             ),
+  tabPanel("Updates",
+           fluidPage(
+             mainPanel(
+               h4("List of Updates to MaxUnMix:"),
+               tags$li("1-August-2019: Bug fix to correct replicated results for model with 3 or more components. In earlier versions of the program 
+                 the results printout for EC and OC parameters, along with error terms, were being replicated in models with 3 or more components.")
+             )
+           ))
 ))
 
  

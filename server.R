@@ -103,7 +103,7 @@ observeEvent(input$exclude_reset, {
     
     if(input$scale == "log"){
       if(input$plot.type == "magnetization data"){
-      plot(dat_keep[,3],dat_keep[,2] ,xlim=c(min(dat_keep[,3]),max(dat_keep[,3])),ylim=c(0,max(dat_keep[,2])),
+      plot(dat_keep[,3],dat_keep[,2] ,xlim=c(min(dat_keep[,3]),max(dat_keep[,3])),ylim=c(min(dat_keep[,2]),max(dat_keep[,2])),
            xlab = paste("log B (",input$B.units,")"), ylab = paste("M (",input$M.units,")"),col="dark grey",pch=19)
       lines(dat_keep[,3],dat_keep[,4],col="black",type="l",lwd=2)
       legend(2.8,-1,c("data","spline"),pch=c(20,NA),lty=c(NA,1),xpd=TRUE)
@@ -111,7 +111,7 @@ observeEvent(input$exclude_reset, {
       } 
       else({
       plot(dat_keep[,3],dat_keep[,8],col="dark grey",type="p",pch=19,
-           xlim=c(min(dat[,3]),max(dat_keep[,3])),ylim=c(0,max(dat_keep[,8])),
+           xlim=c(min(dat[,3]),max(dat_keep[,3])),ylim=c(min(dat_keep[,2]),max(dat_keep[,8])),
            xlab = paste("log B (",input$B.units,")"), ylab = "dM/dlog(B)")
         points(dat_exclude[,3],dat_exclude[,8],col="red",pch = 1)
       if(input$smooth_magnetization == TRUE){
@@ -125,7 +125,7 @@ observeEvent(input$exclude_reset, {
     }
     else({
       if(input$plot.type == "magnetization data"){
-      plot(dat_keep[,1],dat_keep[,2] ,xlim=c(min(dat_keep[,1]),max(dat_keep[,1])),ylim=c(0,max(dat_keep[,2])),col="dark grey",pch=19,
+      plot(dat_keep[,1],dat_keep[,2] ,xlim=c(min(dat_keep[,1]),max(dat_keep[,1])),ylim=c(min(dat_keep[,2]),max(dat_keep[,2])),col="dark grey",pch=19,
            xlab = paste("B (",input$B.units,")"), ylab = paste("M (",input$M.units,")"))
       lines(dat_keep[,1],dat_keep[,4],col="black",type="l",lwd=2)
       legend(2.8,-1,c("data","spline"),pch=c(20,NA),lty=c(NA,1),xpd=TRUE)
@@ -133,7 +133,7 @@ observeEvent(input$exclude_reset, {
       }
       else({
       plot(dat_keep[,1],dat_keep[,9],col="dark grey",type="p",pch=19,
-           xlim=c(min(dat_keep[,1]),max(dat_keep[,1])),ylim=c(0,max(dat_keep[,9])),
+           xlim=c(min(dat_keep[,1]),max(dat_keep[,1])),ylim=c(min(dat_keep[,2]),max(dat_keep[,9])),
            xlab = paste("B (",input$B.units,")"), ylab = "dM/dB")
         points(dat_exclude[,1],dat_exclude[,9],col="red",pch = 1)
       if(input$smooth_magnetization == TRUE){

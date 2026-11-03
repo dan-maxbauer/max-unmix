@@ -64,7 +64,7 @@ The sliders set ranges for interactive starting values. The optimizer is called 
 
 Clicking **START** is intended to run the resampling analysis. The controls specify the number of resamples and the proportion of data points used for each resample. For each sample, the code derives a spline or derivative curve, interpolates it onto a common field grid, and fits the selected component model from perturbed starting parameters.
 
-The resampled curves and component fits are summarized using means and 2.5th/97.5th percentiles. These summaries are used to draw uncertainty bands and calculate mean and uncertainty estimates for component parameters and area contributions. The results are displayed in `plot4` and the results outputs. Downloads are provided for CSV results and PNG/EPS plots; logarithmic-scale results also have a normal-unit representation. A separate CSV download stores the component count and the starting parameter values that were passed to the optimizer, one row per enabled component. The export includes the field scale and whether skewness was included; skewness is blank when it was disabled.
+The resampled curves and component fits are summarized using means and 2.5th/97.5th percentiles. These summaries are used to draw uncertainty bands and calculate mean and uncertainty estimates for component parameters and area contributions. The results are displayed in `plot4` and the results outputs. Downloads are provided for CSV results (`<name>_log10.csv` and `<name>_linear.csv`, with no space before the extension), a CSV of the optimized parameters shown on the Optimization tab (`<name>_optimized_parameters.csv`, available after optimization has run), and PNG/EPS plots; logarithmic-scale results also have a normal-unit representation. A separate CSV download stores the component count and the starting parameter values that were passed to the optimizer, one row per enabled component. The export includes the field scale and whether skewness was included; skewness is blank when it was disabled.
 
 ## Main UI-to-Server Mapping
 
@@ -78,7 +78,7 @@ The resampled curves and component fits are summarized using means and 2.5th/97.
 | `plot3`, `results`, `RSS.plot3`, `f.val`, `p.val` | Display optimized results and optional model comparison. |
 | `calc.error`, `n.resample`, `p.r` | Start and configure resampling. |
 | `plot4`, `final.results`, `extra.results` | Display uncertainty plots and tabular summaries. |
-| `export.data`, `export.extra.data`, `export.initial.parameters`, `export.png`, `export.eps` | Download analysis outputs and the optimizer's starting parameter values. |
+| `export.data`, `export.extra.data`, `export.initial.parameters`, `export.optimized.parameters`, `export.png`, `export.eps` | Download analysis outputs and the optimizer's starting parameter values. |
 
 ## Implementation Notes
 

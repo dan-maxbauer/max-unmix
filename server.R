@@ -58,6 +58,19 @@ shinyServer(function(input, output) {
 ####### set up for click/drag to remove or add points ############
 vals <- reactiveValues(keeprows = rep(TRUE, 1))
 initial.fit.parameters <- reactiveVal(NULL)
+# ADDED: optimized parameters shown on the Optimization tab, exported as CSV
+optimized.fit.parameters <- reactiveVal(NULL)
+output$export.optimized.parameters <- downloadHandler(
+  filename = function() {
+    paste0(input$file.name, "_optimized_parameters.csv")
+  },
+  content = function(file) {
+    parameters <- optimized.fit.parameters()
+    if(is.null(parameters))
+      stop("Run optimization before exporting optimized parameters.")
+    write.csv(parameters, file)
+  }
+)
 output$export.initial.parameters <- downloadHandler(
   filename = function() {
     paste0(input$file.name, "_initial_parameters.csv")
@@ -1405,6 +1418,7 @@ save_comp_6 <- reactive({   # saving component as reactive object that only gets
           } else({
             rownames(final.parameters) = c("Bh","DP","P","OC","EC")
           })
+          optimized.fit.parameters(final.parameters) # ADDED
           final.parameters
       })
       output$RSS.plot3 <- renderPrint({
@@ -2795,7 +2809,7 @@ output$final.results <- renderPrint({
  
   output$export.data <- downloadHandler(
     filename = function(){
-      paste(input$file.name,".csv")
+      paste0(input$file.name,"_log10.csv") # CHANGED: no space, _log10 suffix
     },
     content = function(file) {
       write.csv(final.results,file)
@@ -2803,7 +2817,7 @@ output$final.results <- renderPrint({
   )
   output$export.extra.data <- downloadHandler(
     filename = function(){
-      paste(input$file.name,".csv")
+      paste0(input$file.name,"_linear.csv") # CHANGED: no space, _linear suffix
     },
     content = function(file) {
       write.csv(extra.results,file)
